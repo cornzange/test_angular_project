@@ -1,0 +1,24 @@
+.page-header {
+    text-align: center;
+}
+
+.panel {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 300px
+}
+
+@media screen and (min-width: 400px) {
+    .container {
+        width: 400px
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        width: 500px
+    }
+}
