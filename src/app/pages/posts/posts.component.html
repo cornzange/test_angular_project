@@ -3,7 +3,7 @@
 </div>
 <div class="panel" *ngIf="(observable$ | async) as items">
     <div class="container">
-        <posts-item-component *ngFor="let item of items" [title]="item.title" [body]="item.body">
+        <posts-item-component *ngFor="let item of items" [title]="item.title" [body]="item.body" [postId]="item.id">
         </posts-item-component>
     </div>
 </div>

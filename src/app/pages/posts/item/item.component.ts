@@ -8,4 +8,10 @@ import { Component, Input } from '@angular/core';
 export class ItemComponent {
     @Input() title: string = "";
     @Input() body: string = "";
+    @Input() postId: string = "";
+    isCommentsVisible: boolean = false;
+
+    public toggleComments() {
+        this.isCommentsVisible = !this.isCommentsVisible
+    }
 }

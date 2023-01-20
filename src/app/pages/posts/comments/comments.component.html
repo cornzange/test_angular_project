@@ -1,0 +1,8 @@
+<div class="comments">
+    <div *ngIf="isCommentsVisible; else elseBlock">Скрыть комментарии</div>
+    <ng-template (click)="getComments(postId)" #elseBlock>Показать комментарии</ng-template>
+    <div class="comments-content" *ngIf="isCommentsVisible" *ngFor="(observable$ | async) as comments">
+        <comment-item-component *ngFor="comment of comments" [name]="comment.name" [body]="comment.body"
+            [postId]="comment.postId" [email]="comment.email"></comment-item-component>
+    </div>
+</div>
