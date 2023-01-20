@@ -15,6 +15,16 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.json",
             "aot": true
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "namedChunks": true,
+              "vendorChunk": true,
+              "buildOptimizer": true
+            }
           }
         },
         "serve": {
@@ -24,6 +34,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "purchaseapp"
 }
