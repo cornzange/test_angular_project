@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { AlbumsService } from './albums.service';
 
@@ -8,7 +8,7 @@ import { AlbumsService } from './albums.service';
     templateUrl: './albums.component.html',
     styleUrls: ['../../common/panel.styles.css']
 })
-export class AlbumsComponent {
+export class AlbumsComponent implements OnInit, OnDestroy {
     constructor(private service: AlbumsService) { }
 
     observable$: Observable<any>;
@@ -17,6 +17,8 @@ export class AlbumsComponent {
     ngOnInit(): void {
         this.getAlbums();
     }
+
+    ngOnDestroy() { console.log(`onDestroy`); }
 
     getAlbums(): void {
         this.observable$ = this.service.getAllAlbums()

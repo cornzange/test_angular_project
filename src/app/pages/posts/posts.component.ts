@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { PostsService } from './posts.service';
 
@@ -8,7 +8,7 @@ import { PostsService } from './posts.service';
     templateUrl: './posts.component.html',
     styleUrls: ['../../common/panel.styles.css']
 })
-export class PostsComponent {
+export class PostsComponent implements OnInit, OnDestroy {
     constructor(private service: PostsService) { }
 
     observable$: Observable<any>;
@@ -17,6 +17,8 @@ export class PostsComponent {
     ngOnInit(): void {
         this.getPosts();
     }
+
+    ngOnDestroy() { console.log(`onDestroy`); }
 
     getPosts(): void {
         this.observable$ = this.service.getAllPosts()
