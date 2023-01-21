@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { ItemComponent } from './item.component';
+import { CommentComponent } from './comment.component';
 @NgModule({
     imports: [BrowserModule, FormsModule],
-    declarations: [ItemComponent],
-    exports: [ItemComponent],
-    bootstrap: [ItemComponent]
+    declarations: [CommentComponent],
+    exports: [CommentComponent],
+    bootstrap: [CommentComponent]
 })
-export class ItemModule { }
+export class CommentModule { }

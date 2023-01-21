@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { CommentsComponent } from './comments.component';
-import { ItemModule } from '../item/item.module';
+import { CommentModule } from './comment/comment.module';
 @NgModule({
-    imports: [BrowserModule, FormsModule, ItemModule],
+    imports: [BrowserModule, FormsModule, CommentModule],
     declarations: [CommentsComponent],
     exports: [CommentsComponent],
     bootstrap: [CommentsComponent]

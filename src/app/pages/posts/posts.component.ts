@@ -11,8 +11,7 @@ import { PostsService } from './posts.service';
 export class PostsComponent implements OnInit, OnDestroy {
     constructor(private service: PostsService) { }
 
-    observable$: Observable<any>;
-
+    posts$: Observable<any>;
 
     ngOnInit(): void {
         this.getPosts();
@@ -21,6 +20,6 @@ export class PostsComponent implements OnInit, OnDestroy {
     ngOnDestroy() { console.log(`onDestroy`); }
 
     getPosts(): void {
-        this.observable$ = this.service.getAllPosts()
+        this.posts$ = this.service.getAllPosts()
     }
 }
