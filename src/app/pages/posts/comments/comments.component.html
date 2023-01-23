@@ -1,12 +1,14 @@
 <div class="comments">
     <div *ngIf="isCommentsVisible; else elseBlock">
-        <p>Скрыть комментарии</p>
-        <div class="comments-content" *ngFor="(comments$ | async) as items">
-            <comment-component *ngFor="comment of items" [name]="comment.name" [body]="comment.body"
-                [postId]="comment.postId" [email]="comment.email"></comment-component>
+        <button class="button" (click)="toggleCommentsVisible()">Скрыть комментарии</button>
+        <div class="comments-content" *ngIf="(comments$ | async) as items">
+            <comment-component *ngFor="let comment of items" [body]="comment.body" [postId]="comment.postId"
+                [email]="comment.email" [name]="comment.name" [commentId]="comment.id"
+                [isCommentLiked]="checkLike(comment.id)" (onChanged)="onLikesChanged($event)">
+            </comment-component>
         </div>
     </div>
-    <ng-template (click)="getComments(postId)" #elseBlock>
-        <p>Показать комментарии</p>
+    <ng-template #elseBlock>
+        <button class="button" (click)="toggleCommentsVisible()">Показать комментарии</button>
     </ng-template>
 </div>

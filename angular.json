@@ -14,7 +14,10 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.json",
-            "aot": true
+            "aot": true,
+            "styles": [
+              "src/custom-theme.scss"
+            ]
           },
           "configurations": {
             "production": {
@@ -27,6 +30,9 @@
             }
           }
         },
+        "assets": [
+          "src/assets"
+        ],
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {

@@ -9,12 +9,9 @@ export class PostComponent {
     @Input() title: string = "";
     @Input() body: string = "";
     @Input() postId: string = "";
-    isCommentsVisible: boolean = false;
+    isCommentsVisible: boolean;
 
     public getPostId() {
         return this.postId
-    }
-    public toggleComments() {
-        this.isCommentsVisible = !this.isCommentsVisible
     }
 }

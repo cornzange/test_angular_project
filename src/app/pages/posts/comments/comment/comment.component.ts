@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
     selector: 'comment-component',
@@ -7,13 +7,17 @@ import { Component, Input } from '@angular/core';
 })
 export class CommentComponent {
     constructor() { }
-    @Input() postId: number;
-    @Input() name: string = "";
-    @Input() email: string = "";
-    @Input() body: string = "";
-    isCommentLiked: boolean = false;
+    @Input() commentId: number
+    @Input() postId: number
+    @Input() name: string
+    @Input() email: string
+    @Input() body: string
+    @Input() isCommentLiked: boolean = false;
 
-    public toggleLike() {
-        this.isCommentLiked = !this.isCommentLiked
+
+    @Output() onChanged = new EventEmitter<number>();
+    toggleLike() {
+        console.log("toggleLike")
+        this.onChanged.emit(this.commentId);
     }
 }

@@ -1,0 +1,25 @@
+.comment {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.name {
+    margin: 0px;
+    font-size: 16px;
+    font-style: oblique;
+}
+
+.email {
+    margin: 0px;
+    font-size: 16px;
+    color: #777777;
+
+}

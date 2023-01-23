@@ -10,9 +10,15 @@ export class CommentsService {
     constructor(private http: HttpClient) { }
 
     private url = "https://jsonplaceholder.typicode.com/comments"
+    likes: string[]
 
     getCommentsForPost(postId: number): Observable<any> {
         const params = postId ? `?postId=${postId}` : ""
-        return this.http.get<any>(`${this.url}${params}`)
+        const link = this.url + params
+        return this.http.get<any>(link)
+    }
+
+    setLikes(commentId: number) {
+
     }
 }

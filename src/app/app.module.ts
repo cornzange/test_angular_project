@@ -7,8 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { ToDoModule } from './pages/todo/todo.module';
 import { PostsModule } from './pages/posts/posts.module';
 import { AlbumsModule } from './pages/albums/albums.module'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
-    imports: [ToDoModule, PostsModule, AlbumsModule, BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
+    imports: [ToDoModule, PostsModule, AlbumsModule, BrowserModule, FormsModule, HttpClientModule, AppRoutingModule, BrowserAnimationsModule],
     declarations: [AppComponent],
     bootstrap: [AppComponent],
 })

@@ -20,6 +20,6 @@ export class PostsComponent implements OnInit, OnDestroy {
     ngOnDestroy() { console.log(`onDestroy`); }
 
     getPosts(): void {
-        this.posts$ = this.service.getAllPosts()
+        this.posts$ = this.service.getAllPosts().pipe(tap((elements) => console.log(elements)))
     }
 }

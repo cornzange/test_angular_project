@@ -1,7 +1,11 @@
 <div class="comment">
-    <p>{{postId}}</p>
-    <p>{{name}}</p>
-    <p>{{email}}</p>
+    <div class="title">
+        <p class="name">{{name}}</p>
+        <p class="email">{{email}}</p>
+    </div>
     <p>{{body}}</p>
-    <p (click)="toggleLike()">{{isCommentLiked}}</p>
+    <img cImg *ngIf="isCommentLiked; else elseBlock" (click)="toggleLike()" src="img/like-gray-icon.png">
+    <ng-template #elseBlock>
+        <img (click)="toggleLike()" src="assets/img/likeGrayIcon.png">
+    </ng-template>
 </div>
