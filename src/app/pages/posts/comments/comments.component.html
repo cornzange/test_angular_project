@@ -1,6 +1,8 @@
 <div class="comments">
     <div *ngIf="isCommentsVisible; else elseBlock">
-        <button class="button" (click)="toggleCommentsVisible()">Скрыть комментарии</button>
+        <div class="button_container">
+            <button class="button" (click)="toggleCommentsVisible()">Скрыть комментарии</button>
+        </div>
         <div class="comments-content" *ngIf="(comments$ | async) as items">
             <comment-component *ngFor="let comment of items" [body]="comment.body" [postId]="comment.postId"
                 [email]="comment.email" [name]="comment.name" [commentId]="comment.id"
@@ -9,6 +11,8 @@
         </div>
     </div>
     <ng-template #elseBlock>
-        <button class="button" (click)="toggleCommentsVisible()">Показать комментарии</button>
+        <div class="button_container">
+            <button class="button" (click)="toggleCommentsVisible()">Показать комментарии</button>
+        </div>
     </ng-template>
 </div>

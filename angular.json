@@ -17,6 +17,9 @@
             "aot": true,
             "styles": [
               "src/custom-theme.scss"
+            ],
+            "assets": [
+              "src/assets"
             ]
           },
           "configurations": {
@@ -30,9 +33,6 @@
             }
           }
         },
-        "assets": [
-          "src/assets"
-        ],
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
