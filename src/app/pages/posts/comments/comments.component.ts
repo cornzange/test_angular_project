@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit, } from '@angular/core';
 import { catchError, Observable, tap } from 'rxjs';
 import { CommentsService } from './comments.service'
 
@@ -7,7 +7,7 @@ import { CommentsService } from './comments.service'
     templateUrl: './comments.component.html',
     styleUrls: ['./comments.styles.css', '../../../common/button.styles.css']
 })
-export class CommentsComponent implements OnInit, OnDestroy {
+export class CommentsComponent implements OnChanges, OnInit, OnDestroy {
     constructor(private service: CommentsService) { }
 
     comments$: Observable<any>;
@@ -15,8 +15,32 @@ export class CommentsComponent implements OnInit, OnDestroy {
     @Input() likes: number[] = []
     @Input() isCommentsVisible: boolean = false
 
+    ngOnChanges() {
+        console.log('This method should run before ngOnInit')
+    }
+
     ngOnInit() {
         this.comments$ = this.service.getCommentsForPost(this.commentsPostId).pipe(tap((elements) => console.log(elements)))
+    }
+
+    ngDoCheck() {
+        console.log("This method should run after ngOnChanges and ngOnInit")
+    }
+
+    ngAfterContentInit() {
+        console.log("This method should run after ngOnChanges and ngOnInit")
+    }
+
+    ngAfterContentChecked() {
+        console.log("This method should run after ngAfterContentInit() and ngDoCheck()")
+    }
+
+    ngAfterViewInit() {
+        console.log("ngAfterViewChecked")
+    }
+
+    ngAfterViewChecked() {
+        console.log("This method should run after ngAfterViewInit() and ngAfterContentChecked()")
     }
 
     ngOnDestroy() { console.log(`onDestroy`); }
