@@ -4,9 +4,15 @@
         <p class="email">{{email}}</p>
     </div>
     <p>{{body}}</p>
+    <div class="dislike_container">
+        <img cImg *ngIf="isCommentLiked; else dislakeBlock" (click)="toggleLike()" src="assets/img/likeRedIcon.png">
+        <ng-template #dislakeBlock>
+            <img (click)="toggleLike()" src="assets/img/likeGrayIcon.png" alt="this is an image">
+        </ng-template>
+    </div>
     <div class="like_container">
-        <img cImg *ngIf="isCommentLiked; else elseBlock" (click)="toggleLike()" src="assets/img/likeRedIcon.png">
-        <ng-template #elseBlock>
+        <img cImg *ngIf="isCommentLiked; else likeBlock" (click)="toggleLike()" src="assets/img/likeRedIcon.png">
+        <ng-template #likeBlock>
             <img (click)="toggleLike()" src="assets/img/likeGrayIcon.png" alt="this is an image">
         </ng-template>
     </div>
