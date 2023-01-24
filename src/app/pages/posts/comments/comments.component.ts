@@ -14,6 +14,8 @@ export class CommentsComponent implements OnChanges, OnInit, OnDestroy {
     @Input() commentsPostId: number
     @Input() likes: number[] = []
     @Input() isCommentsVisible: boolean = false
+    locationSubscriptoin: string
+    items: any
 
     ngOnChanges() {
         console.log('This method should run before ngOnInit')
@@ -21,9 +23,18 @@ export class CommentsComponent implements OnChanges, OnInit, OnDestroy {
 
     ngOnInit() {
         this.comments$ = this.service.getCommentsForPost(this.commentsPostId).pipe(tap((elements) => console.log(elements)))
+        this.items = this.comments$.subscribe({
+            next(position) {
+                console.log('Current Position: ', position);
+            },
+            error(msg) {
+                console.log('Error Getting Location: ', msg);
+            }
+        });
     }
 
     ngDoCheck() {
+
         console.log("This method should run after ngOnChanges and ngOnInit")
     }
 
@@ -43,7 +54,10 @@ export class CommentsComponent implements OnChanges, OnInit, OnDestroy {
         console.log("This method should run after ngAfterViewInit() and ngAfterContentChecked()")
     }
 
-    ngOnDestroy() { console.log(`onDestroy`); }
+    ngOnDestroy() {
+        this.items.unsubscribe()
+        console.log(`onDestroy`);
+    }
 
     onLikesChanged(commentId: number) {
         console.log("onLikesChanged", commentId)
