@@ -15,7 +15,7 @@ export class CommentsComponent implements OnChanges, OnInit, OnDestroy {
     @Input() likes: number[] = []
     @Input() isCommentsVisible: boolean = false
     locationSubscriptoin: string
-    items: any
+    items: any = []
 
     ngOnChanges() {
         console.log('This method should run before ngOnInit')
@@ -23,9 +23,9 @@ export class CommentsComponent implements OnChanges, OnInit, OnDestroy {
 
     ngOnInit() {
         this.comments$ = this.service.getCommentsForPost(this.commentsPostId).pipe(tap((elements) => console.log(elements)))
-        this.items = this.comments$.subscribe({
-            next(position) {
-                console.log('Current Position: ', position);
+        this.comments$.subscribe({
+            next: (recivedItems) => {
+                this.items = recivedItems
             },
             error(msg) {
                 console.log('Error Getting Location: ', msg);
@@ -35,27 +35,28 @@ export class CommentsComponent implements OnChanges, OnInit, OnDestroy {
 
     ngDoCheck() {
 
-        console.log("This method should run after ngOnChanges and ngOnInit")
+        // console.log("This method should run after ngOnChanges and ngOnInit")
     }
 
     ngAfterContentInit() {
-        console.log("This method should run after ngOnChanges and ngOnInit")
+        // console.log("This method should run after ngOnChanges and ngOnInit")
     }
 
     ngAfterContentChecked() {
-        console.log("This method should run after ngAfterContentInit() and ngDoCheck()")
+        // console.log("This method should run after ngAfterContentInit() and ngDoCheck()")
     }
 
     ngAfterViewInit() {
-        console.log("ngAfterViewChecked")
+        // console.log("ngAfterViewChecked")
+        console.log("ngAfterViewChecked", this.items)
     }
 
     ngAfterViewChecked() {
-        console.log("This method should run after ngAfterViewInit() and ngAfterContentChecked()")
+        // console.log("This method should run after ngAfterViewInit() and ngAfterContentChecked()")
     }
 
     ngOnDestroy() {
-        this.items.unsubscribe()
+        this.items?.unsubscribe()
         console.log(`onDestroy`);
     }
 

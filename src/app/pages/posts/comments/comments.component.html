@@ -3,7 +3,7 @@
         <div class="button_container">
             <button class="button" (click)="toggleCommentsVisible()">Скрыть комментарии</button>
         </div>
-        <div class="comments-content" *ngIf="items">
+        <div class="comments-content">
             <comment-component *ngFor="let comment of items" [body]="comment.body" [postId]="comment.postId"
                 [email]="comment.email" [name]="comment.name" [commentId]="comment.id"
                 [isCommentLiked]="checkLike(comment.id)" (onChanged)="onLikesChanged($event)">
