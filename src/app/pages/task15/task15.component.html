@@ -1,5 +1,15 @@
 <div class="page-header">
-    <h1>Todo</h1>
+    <h1>ngClass и ngStyle</h1>
+</div>
+<div class="task-description">
+    <description-component>
+        <h3 [ngClass]="{'red' : isRed, 'green': isGreen}" [style.font-size]="is20 ? '20px' : '14px' ">
+            Background и размер шрифта заголовка можно выбрать с помощью кнопок
+        </h3>
+        <button (click)="setRed()">set red</button>
+        <button (click)="setGreen()">set green</button>
+        <button (click)="toggleFontSize()">toggle font size</button>
+    </description-component>
 </div>
 <div class="panel" *ngIf="(observable$ | async) as items">
     <div class="container">

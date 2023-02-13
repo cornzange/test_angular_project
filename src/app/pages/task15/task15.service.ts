@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ToDoService {
+export class Task15Service {
 
   constructor(private http: HttpClient) { }
 
