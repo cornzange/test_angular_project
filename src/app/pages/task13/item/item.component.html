@@ -1,4 +1,7 @@
 <div class="todo-item">
     <p>{{todoIndex + 1}}. {{title}}</p>
     <input type="checkbox" [(ngModel)]="completed" />
+    <p>{{count}}</p>
+    <button (click)="increment()">add one</button>
+    <button (click)="decrement()">delete one</button>
 </div>

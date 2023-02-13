@@ -6,6 +6,10 @@
     text-align: center;
 }
 
+.text-center {
+    text-align: center;
+}
+
 .panel {
     display: flex;
     justify-content: center;

@@ -1,22 +1,28 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { Observable, tap } from 'rxjs';
-import { ToDoService } from './todo.service';
+import { ItemComponent } from './item/item.component';
+import { Task13Service } from './task13.service';
 
 
 @Component({
-    selector: 'todo',
-    templateUrl: './todo.component.html',
+    selector: 'task13',
+    templateUrl: './task13.component.html',
     styleUrls: ['../../common/panel.styles.css']
 })
-export class ToDoComponent implements OnInit, OnDestroy {
-    constructor(private service: ToDoService) { }
+export class Task13Component implements OnInit, OnDestroy {
+    constructor(private service: Task13Service) { }
 
     observable$: Observable<any>;
+    contentChildText: string = "ContentChild"
 
+    @ViewChildren('item') itemsComponents: QueryList<ItemComponent>;
 
     ngOnInit(): void {
         this.getTodos();
     }
+
+    increment() { this.itemsComponents.forEach(item => item.increment()) }
+    decrement() { this.itemsComponents.forEach(item => item.decrement()) }
 
     ngOnDestroy() { console.log(`onDestroy`); }
 
