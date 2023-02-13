@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterContentInit, AfterViewChecked, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { Task12Service } from './task12.service';
 
@@ -6,21 +6,42 @@ import { Task12Service } from './task12.service';
 @Component({
     selector: 'task12',
     templateUrl: './task12.component.html',
-    styleUrls: ['../../common/panel.styles.css']
+    styleUrls: ['../../common/panel.styles.css', './task12.styles.css'],
+    changeDetection: ChangeDetectionStrategy.OnPush
+
 })
-export class Task12Component implements OnInit, OnDestroy {
-    constructor(private service: Task12Service) { }
+export class Task12Component implements OnInit, OnDestroy, OnChanges, AfterViewInit, AfterContentInit {
+    constructor(private changeDetectorRef: ChangeDetectorRef, private service: Task12Service) { }
 
-    observable$: Observable<any>;
+    todos$;
+    items: any;
+    toggleAfterViewInit = false
+    toggleAfterContentInit = false
 
-
-    ngOnInit(): void {
-        this.getTodos();
+    ngOnChanges() {
+        // you can see ngOnChanges implementation in item.component.ts
+    }
+    ngAfterViewInit() {
+        this.toggleAfterViewInit = true
+    }
+    ngAfterContentInit() {
+        this.toggleAfterContentInit = true
     }
 
-    ngOnDestroy() { console.log(`onDestroy`); }
+    ngOnInit(): void {
+        this.todos$ = this.service.getAllToDo().subscribe({
+            next: (recivedItems) => {
+                this.items = recivedItems
+                this.changeDetectorRef.markForCheck();
+            },
+            error(msg) {
+                console.log('Error Getting Location: ', msg);
+            }
+        });
+    }
 
-    getTodos(): void {
-        this.observable$ = this.service.getAllToDo()
+    ngOnDestroy() {
+        this.todos$?.unsubscribe()
+        console.log(`onDestroy`);
     }
 }

@@ -1,4 +1,4 @@
-<div class="todo-item">
+<div class="todo-item" [ngClass]="{'green' : toggle, 'red': !toggle}">
     <p>{{todoIndex + 1}}. {{title}}</p>
     <input type="checkbox" [(ngModel)]="completed" />
 </div>

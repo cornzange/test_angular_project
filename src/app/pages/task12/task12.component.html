@@ -1,7 +1,13 @@
 <div class="page-header">
-    <h1>Привязка к событиям дочернего компонента</h1>
+    <h1 [ngClass]="{'before' : toggleAfterContentInit, 'after': !toggleAfterContentInit}">Жизненный цикл компонента</h1>
 </div>
-<div class="panel" *ngIf="(observable$ | async) as items">
+<div class="task-description">
+    <h2 [ngClass]="{'before' : toggleAfterViewInit, 'after': !toggleAfterViewInit}">description:</h2>
+    <description-component>
+        <p>---end of description---</p>
+    </description-component>
+</div>
+<div class="panel">
     <div class="container">
         <item-component *ngFor="let item of items; let i = index" [todoIndex]="i" [title]="item.title"
             [completed]="item.completed">

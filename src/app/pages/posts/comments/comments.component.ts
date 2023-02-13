@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, OnDestroy, OnInit, } from '@angular/core';
-import { catchError, Observable, tap } from 'rxjs';
+import { catchError, Observable, Subscription, tap } from 'rxjs';
 import { CommentsService } from './comments.service'
 
 @Component({
@@ -10,7 +10,7 @@ import { CommentsService } from './comments.service'
 export class CommentsComponent implements OnChanges, OnInit, OnDestroy {
     constructor(private service: CommentsService) { }
 
-    comments$: Observable<any>;
+    comments$: Subscription;
     @Input() commentsPostId: number
     @Input() likes: number[] = []
     @Input() isCommentsVisible: boolean = false
@@ -22,8 +22,7 @@ export class CommentsComponent implements OnChanges, OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.comments$ = this.service.getCommentsForPost(this.commentsPostId).pipe(tap((elements) => console.log(elements)))
-        this.comments$.subscribe({
+        this.comments$ = this.service.getCommentsForPost(this.commentsPostId).subscribe({
             next: (recivedItems) => {
                 this.items = recivedItems
             },
@@ -56,7 +55,7 @@ export class CommentsComponent implements OnChanges, OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.items?.unsubscribe()
+        this.comments$?.unsubscribe()
         console.log(`onDestroy`);
     }
 
