@@ -1,10 +1,10 @@
 <div class="page-header">
-    <h1>Todo</h1>
+    <h1>Создание атрибутивных директив</h1>
 </div>
-<div class="panel" *ngIf="(observable$ | async) as items">
-    <div class="container">
-        <item-component *ngFor="let item of items; let i = index" [todoIndex]="i" [title]="item.title"
-            [completed]="item.completed">
-        </item-component>
-    </div>
+<div class="task-description">
+    <description-component>
+        <h3 margin10 bgblue>
+            К этому заголовку применена директива добавляющая margin 10px и добавляющая background-color
+        </h3>
+    </description-component>
 </div>
