@@ -5,10 +5,9 @@ import { Task16Component } from './task16.component';
 import { ItemModule } from './item/item.module'
 import { HttpClientModule } from '@angular/common/http';
 import { DescriptionModule } from './description/description.module'
-import { Margin10Directive } from 'src/app/directives/margins.directive';
-import { BGBlueDirective } from 'src/app/directives/bgBlue.directive';
+import { DirectivesModule } from 'src/app/directives/directives.module';
 @NgModule({
-    imports: [BrowserModule, FormsModule, ItemModule, HttpClientModule, DescriptionModule],
-    declarations: [Task16Component, Margin10Directive, BGBlueDirective],
+    imports: [DirectivesModule, BrowserModule, FormsModule, ItemModule, HttpClientModule, DescriptionModule],
+    declarations: [Task16Component],
 })
 export class Task16Module { }
