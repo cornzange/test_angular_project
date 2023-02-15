@@ -5,8 +5,9 @@ import { Task20Component } from './task20.component';
 import { ItemModule } from './item/item.module'
 import { HttpClientModule } from '@angular/common/http';
 import { DescriptionModule } from '../task20/description/description.module';
+import { DirectivesModule } from 'src/app/directives/directives.module';
 @NgModule({
-    imports: [BrowserModule, FormsModule, ItemModule, HttpClientModule, DescriptionModule],
+    imports: [DirectivesModule, BrowserModule, FormsModule, ItemModule, HttpClientModule, DescriptionModule],
     declarations: [Task20Component],
 })
 export class Task20Module { }
