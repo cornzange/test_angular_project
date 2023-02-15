@@ -14,7 +14,7 @@ import { Task17Module } from './pages/task17/task17.module';
 import { Task18Module } from './pages/task18/task18.module';
 import { Task19Module } from './pages/task19/task19.module';
 import { Task20Module } from './pages/task20/task20.module';
-// import { Task21Module } from './pages/task21/task21.module';
+import { Task21Module } from './pages/task21/task21.module';
 // import { Task22Module } from './pages/task22/task22.module';
 // import { Task23Module } from './pages/task23/task23.module';
 // import { Task24Module } from './pages/task24/task24.module';
@@ -55,7 +55,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         Task18Module,
         Task19Module,
         Task20Module,
-        // Task21Module,
+        Task21Module,
         // Task22Module,
         // Task23Module,
         // Task24Module,
