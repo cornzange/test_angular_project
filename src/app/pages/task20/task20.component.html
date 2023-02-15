@@ -1,5 +1,10 @@
 <div class="page-header">
-    <h1>Todo</h1>
+    <h1>Создание структурных директив</h1>
+</div>
+<div class="task-description">
+    <description-component>
+        Для получения элементов todo list использованы cтруктурные директивы ngIf и ngFor
+    </description-component>
 </div>
 <div class="panel" *ngIf="(observable$ | async) as items">
     <div class="container">
