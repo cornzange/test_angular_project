@@ -1,0 +1,7 @@
+<div>
+    <input type="text" [(ngModel)]="newItem">
+    <button (click)="addItem(newItem)">add item</button>
+</div>
+<item-component *ngFor="let item of items; let i = index" [todoIndex]="i" [title]="item.title"
+    [completed]="item.completed">
+</item-component>

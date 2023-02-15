@@ -11,7 +11,6 @@ import { Task24Service } from './task24.service';
 export class Task24Component implements OnInit, OnDestroy {
     constructor(private service: Task24Service) { }
 
-    observable$: Observable<any>;
     isRed = false;
     isGreen = false;
     is20 = false;
@@ -31,12 +30,7 @@ export class Task24Component implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
-        this.getTodos();
     }
 
     ngOnDestroy() { console.log(`onDestroy`); }
-
-    getTodos(): void {
-        this.observable$ = this.service.getAllToDo()
-    }
 }

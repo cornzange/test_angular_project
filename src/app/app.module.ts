@@ -44,6 +44,7 @@ import { Task24Module } from './pages/task24/task24.module';
 import { PostsModule } from './pages/posts/posts.module';
 import { AlbumsModule } from './pages/albums/albums.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Task24Service } from './pages/task24/task24.service';
 @NgModule({
     imports: [
         Task12Module,
@@ -92,5 +93,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         BrowserAnimationsModule],
     declarations: [AppComponent],
     bootstrap: [AppComponent],
+    providers: [Task24Service]
 })
 export class AppModule { }

@@ -1,17 +1,45 @@
 import { Injectable, Optional } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { LogService } from './log.service'
+import * as uuid from 'uuid';
 
 @Injectable()
 export class Task24Service {
+  constructor() { }
 
-  constructor(private http: HttpClient, @Optional() private logService: LogService) { }
+  todos = [{
+    id: 1,
+    title: "Default item",
+    completed: false
+  }]
 
-  private url = "https://jsonplaceholder.typicode.com/todos"
-
-  getAllToDo(): Observable<any> {
-    if (this.logService) this.logService.write("операция получения данных");
-    return this.http.get<any>(this.url)
+  getAllToDo() {
+    return this.todos
   }
+
+  createToDo(title: string) {
+    const newToDo = {
+      id: uuid.v4(),
+      title,
+      completed: false
+    }
+    this.todos.push(newToDo)
+  }
+
+  // updateToDo(id: number, completed: boolean) {
+  //   this.todos = this.todos.map((todo) => {
+  //     if (todo?.id === id) {
+  //       return {
+  //         id,
+  //         title: todo?.title,
+  //         completed
+  //       }
+  //     }
+  //     return todo
+  //   })
+  // }
+
+  // deleteToDo(id: number) {
+  //   this.todos = this.todos.filter(todo => todo?.id !== id)
+  // }
 }
