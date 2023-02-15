@@ -7,10 +7,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { DescriptionModule } from '../task23/description/description.module';
 import { DirectivesModule } from 'src/app/directives/directives.module';
 import { Task23Service } from './task23.service';
-import { LogService } from './log.service';
 @NgModule({
     imports: [DirectivesModule, BrowserModule, FormsModule, ItemModule, HttpClientModule, DescriptionModule],
     declarations: [Task23Component],
-    providers: [Task23Service, LogService]
+    providers: [Task23Service]
 })
 export class Task23Module { }
