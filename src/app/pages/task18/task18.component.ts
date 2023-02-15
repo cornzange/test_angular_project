@@ -1,15 +1,15 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, tap } from 'rxjs';
-import { ToDoService } from './todo.service';
+import { Task18Service } from './task18.service';
 
 
 @Component({
-    selector: 'todo',
-    templateUrl: './todo.component.html',
+    selector: 'task18',
+    templateUrl: './task18.component.html',
     styleUrls: ['../../common/panel.styles.css']
 })
-export class ToDoComponent implements OnInit, OnDestroy {
-    constructor(private service: ToDoService) { }
+export class Task18Component implements OnInit, OnDestroy {
+    constructor(private service: Task18Service) { }
 
     observable$: Observable<any>;
 
