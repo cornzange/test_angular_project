@@ -1,0 +1,15 @@
+<div class="page-header">
+    <h1>HttpClient и отправка запросов</h1>
+</div>
+<div class="task-description">
+    <description-component>
+        <h3>В компоненте в методе ngOnInit производится обращение к сервису в котором делается запрос к серверу</h3>
+    </description-component>
+</div>
+<div class="panel">
+    <div class="container">
+        <item-component *ngFor="let item of items; let i = index" [todoIndex]="i" [title]="item.title"
+            [completed]="item.completed">
+        </item-component>
+    </div>
+</div>
