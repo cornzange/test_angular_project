@@ -1,0 +1,14 @@
+<div class="center form-container">
+    <div class="flex input-container">
+        <p>title:</p>
+        <input type="text" [(ngModel)]="newItemTitle">
+    </div>
+    <div class="flex input-container">
+        <p>completed:</p>
+        <input type="checkbox" [(ngModel)]="newItemCompleted">
+    </div>
+    <button (click)="addItem(newItemTitle, newItemCompleted)">add item</button>
+</div>
+<item-component *ngFor="let item of items; let i = index" [todoIndex]="i" [title]="item.title"
+    [completed]="item.completed">
+</item-component>
