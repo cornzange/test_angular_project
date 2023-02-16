@@ -1,0 +1,15 @@
+<form class="center form-container" #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <div class="flex input-container">
+        <p>title:</p>
+        <input type="text" class="form-control" [(ngModel)]="item.title" name="title" required>
+    </div>
+    <div class="flex input-container">
+        <p>completed:</p>
+        <input class="form-control" name="completed" type="checkbox" [(ngModel)]="item.completed">
+    </div>
+    <input type="submit" class="btn btn-default" [disabled]="myForm.invalid" value="add
+    item">
+</form>
+<item-component *ngFor="let item of items; let i = index" [todoIndex]="i" [title]="item.title"
+    [completed]="item.completed">
+</item-component>
