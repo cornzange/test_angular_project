@@ -23,7 +23,7 @@ import { Task26Module } from './pages/task26/task26.module';
 import { Task27Module } from './pages/task27/task27.module';
 import { Task28Module } from './pages/task28/task28.module';
 import { Task29Module } from './pages/task29/task29.module';
-// import { Task30Module } from './pages/task30/task30.module';
+import { Task30Module } from './pages/task30/task30.module';
 // import { Task31Module } from './pages/task31/task31.module';
 // import { Task32Module } from './pages/task32/task32.module';
 // import { Task33Module } from './pages/task33/task33.module';
@@ -65,7 +65,7 @@ import { Task24Service } from './pages/task24/task24.service';
         Task27Module,
         Task28Module,
         Task29Module,
-        // Task30Module,
+        Task30Module,
         // Task31Module,
         // Task32Module,
         // Task33Module,

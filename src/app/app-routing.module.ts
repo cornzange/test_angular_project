@@ -19,7 +19,7 @@ import { Task26Component } from './pages/task26/task26.component';
 import { Task27Component } from './pages/task27/task27.component';
 import { Task28Component } from './pages/task28/task28.component';
 import { Task29Component } from './pages/task29/task29.component';
-// import { Task30Component } from './pages/task30/task30.component';
+import { Task30Component } from './pages/task30/task30.component';
 // import { Task31Component } from './pages/task31/task31.component';
 // import { Task32Component } from './pages/task32/task32.component';
 // import { Task33Component } from './pages/task33/task33.component';
@@ -63,7 +63,7 @@ const routes: Routes = [
   { path: 'task27', component: Task27Component },
   { path: 'task28', component: Task28Component },
   { path: 'task29', component: Task29Component },
-  // { path: 'task30', component: Task30Component },
+  { path: 'task30', component: Task30Component },
   // { path: 'task31', component: Task31Component },
   // { path: 'task32', component: Task32Component },
   // { path: 'task33', component: Task33Component },

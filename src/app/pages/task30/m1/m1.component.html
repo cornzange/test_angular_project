@@ -1,0 +1,16 @@
+<form class="center form-container" [formGroup]="myForm" (ngSubmit)="submit()">
+    <div class="flex input-container">
+        <p>title:</p>
+        <input type="text" class="form-control" name="title" formControlName="title">
+    </div>
+    <div class="flex input-container">
+        <p>completed:</p>
+        <input class="form-control" name="completed" formControlName="completed" type="checkbox">
+    </div>
+    <button class="btn btn-default" [disabled]="myForm.invalid">
+        Отправить
+    </button>
+</form>
+<item-component *ngFor="let item of items; let i = index" [todoIndex]="i" [title]="item.title"
+    [completed]="item.completed">
+</item-component>
