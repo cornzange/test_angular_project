@@ -1,0 +1,18 @@
+<div class="center form-container">
+    <div class="flex input-container">
+        <p>title:</p>
+        <input type="text" class="form-control" [(ngModel)]="item.title" name="title" required #title="ngModel">
+    </div>
+    <div [hidden]="title.untouched" class="alert alert-danger">
+        Не указано название задачи
+    </div>
+    <div class="flex input-container">
+        <p>completed:</p>
+        <input class="form-control" type="checkbox" [(ngModel)]="item.completed" #completed="ngModel">
+    </div>
+    <button class="btn btn-default" [disabled]="title.untouched" (click)="addItem(title.value, completed.value)">add
+        item</button>
+</div>
+<item-component *ngFor="let item of items; let i = index" [todoIndex]="i" [title]="item.title"
+    [completed]="item.completed">
+</item-component>
