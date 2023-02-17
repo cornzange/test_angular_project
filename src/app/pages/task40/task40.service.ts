@@ -5,7 +5,7 @@ import { catchError, filter, map, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class Task39Service {
+export class Task40Service {
 
   constructor(private http: HttpClient) { }
 

@@ -33,7 +33,9 @@ import { Task34Module } from './pages/task34/task34.module';
 import { Task37Module } from './pages/task37/task37.module';
 import { Task38Module } from './pages/task38/task38.module';
 import { Task39Module } from './pages/task39/task39.module';
-// import { Task40Module } from './pages/task40/task40.module';
+import { Task40Module } from './pages/task40/task40.module';
+import { IdModule } from './pages/task40/id/id.module';
+import { TextModule } from './pages/task40/text/text.module';
 // import { Task41Module } from './pages/task41/task41.module';
 // import { Task42Module } from './pages/task42/task42.module';
 // import { Task43Module } from './pages/task43/task43.module';
@@ -75,7 +77,9 @@ import { Task24Service } from './pages/task24/task24.service';
         Task37Module,
         Task38Module,
         Task39Module,
-        // Task40Module,
+        Task40Module,
+        IdModule,
+        TextModule,
         // Task41Module,
         // Task42Module,
         // Task43Module,
