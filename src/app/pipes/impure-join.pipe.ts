@@ -1,8 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
-    name: 'join',
+    name: 'impure_join',
+    pure: false
 })
-export class JoinPipe implements PipeTransform {
+export class ImpureJoinPipe implements PipeTransform {
     transform(array: any, start?: any, end?: any): any {
         let result = array;
         if (start !== undefined) {
