@@ -1,0 +1,17 @@
+<div class="page-header">
+    <h1>Guards</h1>
+</div>
+<div class="task-description">
+    <description-component>
+        <h3>В папке guards лежит Task41Guard, который подтверждает переход на страницу. ExitTask41Guard блокирует
+            переход со страницы без нажатия на кнопку "Сохранить"</h3>
+        <button class="btn btn-default" (click)="save()">Сохранить</button>
+    </description-component>
+</div>
+<div class="panel">
+    <div class="container">
+        <item-component *ngFor="let item of items; let i = index" [todoIndex]="i" [title]="item.title"
+            [completed]="item.completed">
+        </item-component>
+    </div>
+</div>

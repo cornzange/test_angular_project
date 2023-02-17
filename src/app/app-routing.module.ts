@@ -32,7 +32,7 @@ import { Task39Component } from './pages/task39/task39.component';
 import { Task40Component } from './pages/task40/task40.component';
 import { IdComponent } from './pages/task40/id/id.component';
 import { TextComponent } from './pages/task40/text/text.component';
-// import { Task41Component } from './pages/task41/task41.component';
+import { Task41Component } from './pages/task41/task41.component';
 // import { Task42Component } from './pages/task42/task42.component';
 // import { Task43Component } from './pages/task43/task43.component';
 // import { Task44Component } from './pages/task44/task44.component';
@@ -41,6 +41,8 @@ import { TextComponent } from './pages/task40/text/text.component';
 // import { Task47Component } from './pages/task47/task47.component';
 import { PostsComponent } from './pages/posts/posts.component';
 import { AlbumsComponent } from './pages/albums/albums.component';
+import { Task41Guard } from './guards/task41.guard';
+import { ExitTask41Guard } from './guards/exit.task41.guard';
 
 
 const task40: Routes = [
@@ -83,7 +85,7 @@ const routes: Routes = [
   { path: 'task38', component: Task38Component },
   { path: 'task39', component: Task39Component },
   { path: 'task40', component: Task40Component, children: task40 },
-  // { path: 'task41', component: Task41Component },
+  { path: 'task41', component: Task41Component, canActivate: [Task41Guard], canDeactivate: [ExitTask41Guard] },
   // { path: 'task42', component: Task42Component },
   // { path: 'task43', component: Task43Component },
   // { path: 'task44', component: Task44Component },
