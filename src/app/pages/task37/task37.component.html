@@ -1,0 +1,27 @@
+<div class="page-header">
+    <h1>Параметры маршрута {{id}}</h1>
+</div>
+<div class="task-description">
+    <description-component>
+        <h3>В зависимости от выбранного маршрута отрисовываются разные списки задач пользователей</h3>
+        <nav>
+            <a routerLink="/task37/1">To do list user 1</a>
+            <a routerLink="/task37/2">To do list user 2</a>
+            <a routerLink="/task37/3">To do list user 3</a>
+            <a routerLink="/task37/4">To do list user 4</a>
+            <a routerLink="/task37/5">To do list user 5</a>
+            <a routerLink="/task37/6">To do list user 6</a>
+            <a routerLink="/task37/7">To do list user 7</a>
+            <a routerLink="/task37/8">To do list user 8</a>
+            <a routerLink="/task37/9">To do list user 9</a>
+            <a routerLink="/task37/10">To do list user 10</a>
+        </nav>
+    </description-component>
+</div>
+<div class="panel">
+    <div class="container">
+        <item-component *ngFor="let item of items; let i = index" [todoIndex]="i" [text]="item.text"
+            [isDone]="item.isDone">
+        </item-component>
+    </div>
+</div>
