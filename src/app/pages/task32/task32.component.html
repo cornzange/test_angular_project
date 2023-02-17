@@ -1,0 +1,15 @@
+<div class="page-header">
+    <h1>Объект Observable и библиотека RxJS</h1>
+</div>
+<div class="task-description">
+    <description-component>
+        <h3>В сервисе в котором делается запрос к серверу выполняется постобработка запроса</h3>
+    </description-component>
+</div>
+<div class="panel">
+    <div class="container">
+        <item-component *ngFor="let item of items; let i = index" [todoIndex]="i" [text]="item.text"
+            [isDone]="item.isDone">
+        </item-component>
+    </div>
+</div>
