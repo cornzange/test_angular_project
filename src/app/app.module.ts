@@ -40,14 +40,13 @@ import { Task41Module } from './pages/task41/task41.module';
 import { Task42Module } from './pages/task42/task42.module';
 import { Task43Module } from './pages/task43/task43.module';
 import { Task44Module } from './pages/task44/task44.module';
-// import { Task45Module } from './pages/task45/task45.module';
+import { Task45Module } from './pages/task45/task45.module';
 // import { Task46Module } from './pages/task46/task46.module';
 // import { Task47Module } from './pages/task47/task47.module';
 import { PostsModule } from './pages/posts/posts.module';
 import { AlbumsModule } from './pages/albums/albums.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Task24Service } from './pages/task24/task24.service';
-import { CommaPipe } from './pipes/comma.pipe'
 @NgModule({
     imports: [
         Task12Module,
@@ -85,7 +84,7 @@ import { CommaPipe } from './pipes/comma.pipe'
         Task42Module,
         Task43Module,
         Task44Module,
-        // Task45Module,
+        Task45Module,
         // Task46Module,
         // Task47Module,
         ToDoModule,
