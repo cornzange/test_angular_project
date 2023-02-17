@@ -27,7 +27,7 @@ import { Task34Component } from './pages/task34/task34.component';
 // import { Task35Component } from './pages/task35/task35.component';
 // import { Task36Component } from './pages/task36/task36.component';
 import { Task37Component } from './pages/task37/task37.component';
-// import { Task38Component } from './pages/task38/task38.component';
+import { Task38Component } from './pages/task38/task38.component';
 // import { Task39Component } from './pages/task39/task39.component';
 // import { Task40Component } from './pages/task40/task40.component';
 // import { Task41Component } from './pages/task41/task41.component';
@@ -72,7 +72,7 @@ const routes: Routes = [
   // { path: 'task36', component: Task36Component },
   { path: 'task37', redirectTo: '/task37/1', pathMatch: 'full' },
   { path: 'task37/:id', component: Task37Component },
-  // { path: 'task38', component: Task38Component },
+  { path: 'task38', component: Task38Component },
   // { path: 'task39', component: Task39Component },
   // { path: 'task40', component: Task40Component },
   // { path: 'task41', component: Task41Component },
